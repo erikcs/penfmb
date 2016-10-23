@@ -10,4 +10,5 @@ setup(name='penfmb',
       license='MIT',
       py_modules=['penfmb'],
       test_suite='nose.collector',
-      tests_require=['nose'])
+      tests_require=['nose'],
+      install_requires=['arch, statsmodels, pandas'])
