@@ -7,7 +7,7 @@ Simple Python implementation of the Penalized Fama-MacBeth estimator from *S. Br
 Apply the estimator to the Carhart 4 factor model (`carhart`) with the ubiquitous
 25 Fama-French portfolios (`twentyfive`, see the accompanying unit test for details on these two data frames)
 
-```
+```python
 >>> from penfmb import PenFMB
 >>> est = PenFMB(nboot=1000).fit(twentyfive, carhart)
 >>> est.coefs_
