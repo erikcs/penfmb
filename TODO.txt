@@ -1,0 +1,1 @@
+Add option for Fisher transform instead of gen.reg.
