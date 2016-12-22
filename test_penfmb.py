@@ -21,13 +21,15 @@ class TestMain(unittest.TestCase):
     def test_fmb(self):
         _, b , _ = pn._fmb(twentyfive, ff['Mkt-RF'])
         assert_almost_equal(b.params,
-                 np.array([ 1.47420462, -0.69708656]))
+                 np.array([ 1.4741268, -0.6969725]), decimal=4)
 
         _, b, _ = pn._fmb(twentyfive, ff.drop('RF', axis=1))
         assert_almost_equal(b.params,
-                np.array([ 1.34944109, -0.79471028,  0.14141737,  0.42571358]))
+                np.array([ 1.3495192, -0.7947864,  0.1414998,  0.4257349]),
+                decimal=4)
 
     def test_PenFMB(self):
         penfmb = pn.PenFMB(nboot=1).fit(twentyfive, carhart)
         assert_almost_equal(penfmb.coefs_['coef'],
-        np.array([ 1.29839995, -0.7464947 ,  0.14236288,  0.42916711,  0.]))
+        np.array([ 1.29852433, -0.74661834,  0.14244865,  0.42918938,  0.]),
+        decimal=4)

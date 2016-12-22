@@ -107,13 +107,15 @@ def _coordinate_descent(X, y, alpha=0, alpha_weights=None, tol=1e-5, maxiter=100
     if alpha_weights is None:
         alpha_weights = np.ones(p)
 
+    r = y - (X * w).sum(axis=1)
     for n_iter in range(maxiter):
 
-        r = y - (X * w).sum(axis=1)
         for i in range(p):
             x = X[:, i]
             w_ols = w[i] + np.dot(x, r) / n
             w[i] = _soft_threshold(w_ols, alpha * alpha_weights[i])
+            r += wp[i] * X[:, i]
+            r -= w[i] * X[:, i]
 
         converged = np.linalg.norm(wp - w) < tol
         if converged:
