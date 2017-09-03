@@ -1,7 +1,7 @@
 Simple Python implementation of the Penalized Fama-MacBeth estimator from *S. Bryzgalova 'Spurious Factors in Linear Asset Pricing Models' (2015)*
 
 ###### Installation
-`$ pip install git+https://github.com/nuffe/penfmb.git`
+`$ pip install git+https://github.com/erikcs/penfmb.git`
 
 ###### Example
 Apply the estimator to the Carhart 4 factor model (`carhart`) with the ubiquitous
